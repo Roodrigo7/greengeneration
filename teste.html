@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Informações sobre Hardware</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding-top: 70px;
+            color: #333;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #005691;
+            color: white;
+            padding: 15px 30px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-in-out;
+        }
+
+        h2 {
+            color: #005691;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        canvas {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #topo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #005691;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Guia sobre Hardware</h1>
+        <nav>
+            <a href="#oque">O que é</a>
+            <a href="#tipos">Tipos</a>
+            <a href="#funcionamento">Funcionamento</a>
+            <a href="#imagens">Imagens</a>
+            <a href="#vida">Vida útil</a>
+            <a href="#grafico">Gráfico</a>
+            <a href="#descarte">Descarte</a>
+            <a href="#reuso">Reaproveitamento</a>
+            <a href="#dicas">Dicas</a>
+        </nav>
+    </header>
+
+    <button id="topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+    <div class="section" id="oque">
+        <h2>O que é Hardware?</h2>
+        <p>Hardware é toda parte física de um computador ou dispositivo eletrônico. São os componentes que podemos ver e
+            tocar, como o teclado, o mouse, o monitor e a placa-mãe.</p>
+    </div>
+
+    <div class="section" id="tipos">
+        <h2>Tipos de Hardware</h2>
+        <ul>
+            <li><strong>Entrada:</strong> teclado, mouse, scanner, microfone</li>
+            <li><strong>Saída:</strong> monitor, impressora, caixas de som</li>
+            <li><strong>Processamento:</strong> CPU, placa-mãe</li>
+            <li><strong>Armazenamento:</strong> HD, SSD, pendrive</li>
+            <li><strong>Comunicação:</strong> modem, roteador, placa de rede</li>
+        </ul>
+    </div>
+
+    <div class="section" id="funcionamento">
+        <h2>Funcionamento do Hardware</h2>
+        <p>Os componentes de hardware funcionam em conjunto com os programas (softwares). Por exemplo, você digita no
+            teclado (entrada), o processador interpreta, e o resultado aparece no monitor (saída). Se você salvar, o
+            dado vai para o HD ou SSD (armazenamento).</p>
+    </div>
+
+    <div class="section" id="imagens">
+        <h2>Imagens de Hardware</h2>
+        <p><strong>Placa-mãe:</strong><br><img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/21/ASRock_Z170_Extreme6_motherboard.jpg"
+                alt="Placa-mãe"></p>
+        <p><strong>HD:</strong><br><img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/55/Hard_disk_dismantled.jpg" alt="HD"></p>
+        <p><strong>Memória RAM:</strong><br><img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d2/DDR3_SDRAM_4GB_01.jpg" alt="RAM"></p>
+        <p><strong>Fonte de Alimentação:</strong><br><img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/41/ATX_power_supply.jpg"
+                alt="Fonte de alimentação"></p>
+    </div>
+
+    <div class="section" id="vida">
+        <h2>Tempo Médio de Vida Útil</h2>
+        <ul>
+            <li>HD: 3 a 5 anos</li>
+            <li>SSD: 5 a 10 anos</li>
+            <li>Fonte: 4 a 6 anos</li>
+            <li>CPU: 7 a 10 anos</li>
+            <li>Placa-mãe: 6 a 8 anos</li>
+            <li>RAM: 8 a 10 anos (ou mais)</li>
+        </ul>
+    </div>
+
+    <div class="section" id="grafico">
+        <h2>Gráfico: Uso Correto vs Incorreto do Hardware</h2>
+        <canvas id="graficoHardware"></canvas>
+        <script>
+            const ctx = document.getElementById('graficoHardware').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['HD', 'SSD', 'CPU', 'RAM', 'Fonte'],
+                    datasets: [
+                        {
+                            label: 'Uso Correto (anos)',
+                            data: [5, 10, 10, 10, 6],
+                            backgroundColor: 'rgba(0, 123, 255, 0.6)'
+                        },
+                        {
+                            label: 'Uso Incorreto (anos)',
+                            data: [2, 4, 5, 6, 2],
+                            backgroundColor: 'rgba(220, 53, 69, 0.6)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Anos de duração'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+
+    <div class="section" id="descarte">
+        <h2>Pontos de Coleta e Descarte</h2>
+        <p>Você pode levar hardwares antigos para ecopontos da sua cidade, lojas de eletrônicos ou projetos sociais. Em
+            Nova York, existe o programa <strong>eCycleNYC</strong> para descarte seguro.</p>
+    </div>
+
+    <div class="section" id="reuso">
+        <h2>Reaproveitamento de Hardware</h2>
+        <ul>
+            <li>Transformar HD em HD externo</li>
+            <li>Usar peças para montar outro computador</li>
+            <li>Doar para ONGs e escolas</li>
+            <li>Reutilizar um PC antigo como servidor de arquivos</li>
+        </ul>
+    </div>
+
+    <div class="section" id="dicas">
+        <h2>Dicas para Aumentar o Tempo de Uso de um Computador</h2>
+        <ul>
+            <li>Manter a limpeza interna e externa</li>
+            <li>Evitar superaquecimento</li>
+            <li>Usar estabilizador ou filtro de linha</li>
+            <li>Atualizar o sistema e antivírus</li>
+            <li>Desfragmentar HD (se não for SSD)</li>
+            <li>Evitar quedas e impactos físicos</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

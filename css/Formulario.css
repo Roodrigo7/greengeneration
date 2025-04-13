@@ -1,0 +1,235 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #ffffff; */
+    /* Corrigido o uso de background */
+}
+
+
+h1,
+h2 {
+    text-align: center;
+}
+
+ul {
+    background: transparent;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+li {
+    margin-left: 200px;
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background: linear-gradient(45deg, #0000FF, #00BFFF, #87CEFA);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+}
+
+.dropdown-content a {
+    color: blue;
+    display: block;
+    text-align: left;
+    border: 1px solid rgb(122, 122, 122);
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../imagem/pexels-souvenirpixels-417074.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    /* Garante que o body ocupe pelo menos a altura total da tela */
+    padding-top: 60px;
+    /* Distância para a altura da barra de navegação */
+    display: flex;
+    /* Use flexbox para organizar o card */
+    justify-content: center;
+    /* Centraliza o card horizontalmente */
+    align-items: center;
+    /* Centraliza o card verticalmente */
+    overflow: hidden;
+    /* Isso oculta a barra de rolagem */
+    overflow-y: scroll;
+    /* Mantém a rolagem vertical */
+
+}
+
+nav {
+    position: fixed;
+    /* Fixa a barra de navegação no topo */
+    top: 0;
+    /* Mantém na parte superior da tela */
+    left: 0;
+    /* Para ocupar toda a largura */
+    width: 100%;
+    /* Largura total */
+    z-index: 1000;
+    /* Certifica-se de que está acima de outros elementos */
+}
+
+.card {
+    margin-top: -50%;
+    /* Ajuste aqui se precisar de mais espaço */
+    background: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    width: 450px;
+    /* Define a largura como 80% do contêiner pai */
+    max-width: 1200px;
+    /* Limite a largura máxima */
+    box-shadow: 0 2px 15px red;
+    border-radius: 8px;
+    /* Arredondar os cantos do card */
+    min-height: 300px;
+    /* Define uma altura mínima para o card */
+}
+
+.header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* Usar flexbox para alinhar o ícone e o título */
+    align-items: center;
+    /* Alinhar verticalmente */
+    justify-content: center;
+    /* Centralizar horizontalmente */
+    margin-bottom: 20px;
+    /* Espaço abaixo do header */
+    font-size: 25px;
+}
+
+.user {
+    justify-content: center;
+    align-items: center;
+    font-size: 33px;
+    /* Aumentar o tamanho do ícone, se necessário */
+    margin-right: 10px;
+    /* Espaço entre o ícone e o título */
+    align-items: center;
+    text-align: center;
+}
+
+.info {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+    /* Cor do texto do label */
+}
+
+
+.botao {
+    width: 100%;
+    /* background: linear-gradient(45deg, blue, red); */
+    background: white;
+    box-shadow: inset 0 0 25px red;
+    color: rgb(0, 0, 0);
+    transition: 1.5s;
+    height: 35px;
+}
+
+.botao:hover {
+    color: white;
+    padding: 15px;
+    height: 50px;
+    background: black;
+    font-size: 15px;
+    box-shadow: inset 0 0 25px rgb(255, 0, 0);
+    font-weight: 600;
+}
+
+.input-container {
+    position: relative;
+    /* Necessário para posicionar o ícone corretamente */
+}
+
+.lock {
+    position: absolute;
+    right: 7px;
+    /* Distância do ícone do lado direito */
+    top: 30%;
+    /* Centralizar verticalmente */
+    transform: translateY(-50%);
+    /* Ajustar para centralização perfeita */
+    font-size: 18px;
+    /* Tamanho do ícone */
+    color: #aaa;
+    /* Cor do ícone */
+}
+
+.email {
+    position: absolute;
+    right: 10px;
+    /* Distância do ícone do lado direito */
+    top: 50%;
+    /* Centralizar verticalmente */
+    transform: translateY(-50%);
+    /* Ajustar para centralização perfeita */
+    font-size: 18px;
+    /* Tamanho do ícone */
+    color: white;
+    /* Cor do ícone */
+}
+
+.login {
+    position: absolute;
+    right: 7px;
+    /* Distância do ícone do lado direito */
+    top: 30%;
+    /* Centralizar verticalmente */
+    transform: translateY(-50%);
+    /* Ajustar para centralização perfeita */
+    font-size: 18px;
+    /* Tamanho do ícone */
+    color: #aaa;
+    /* Cor do ícone */
+}

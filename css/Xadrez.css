@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: (#ffffff);
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    border-left: 500px solid black;
+    /* Borda esquerda */
+    border-right: 500px solid black;
+    /* Borda direita */
+    padding: 0 10px;
+    /* Espaçamento interno para que o conteúdo não toque as bordas */
+    height: 100%;
+    /* Define a altura do container como 100% da altura da viewport */
+}
+
+.content {
+    max-width: 800px;
+    /* Define a largura máxima do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o conteúdo horizontalmente */
+    padding: 20px;
+    /* Adiciona espaçamento interno ao conteúdo */
+    background: #ffffff;
+    /* Cor de fundo do conteúdo */
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+ul {
+    background: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background: linear-gradient(45deg, #0000FF, #00BFFF, #87CEFA);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 150px;
+}
+
+.dropdown-content a {
+    color: blue;
+    display: block;
+    text-align: left;
+    border: 1px solid rgb(122, 122, 122);
+
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    /* Corrigido o uso de background */
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    border-left: 500px solid black;
+    /* Borda esquerda */
+    border-right: 500px solid black;
+    /* Borda direita */
+    padding: 0 10px;
+    /* Espaçamento interno para que o conteúdo não toque as bordas */
+    height: 100%;
+    /* Define a altura do container como 100% da altura da viewport */
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+ul {
+    background: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background: linear-gradient(45deg, #0000FF, #00BFFF, #87CEFA);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 150px;
+}
+
+.dropdown-content a {
+    color: blue;
+    display: block;
+    text-align: left;
+    border: 1px solid rgb(122, 122, 122);
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        border-left: 300px solid black;
+        /* Ajusta bordas para telas médias */
+        border-right: 300px solid black;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        border-left: 100px solid black;
+        /* Ajusta bordas para telas menores */
+        border-right: 100px solid black;
+        padding: 0 5px;
+    }
+
+    ul {
+        display: flex;
+        /* Altera o menu para flexbox em telas pequenas */
+        flex-direction: column;
+        /* Menu em coluna */
+    }
+
+    li {
+        float: none;
+        /* Remove o float em telas pequenas */
+    }
+
+    li a {
+        width: 100%;
+        /* Faz o link ocupar toda a largura */
+        padding: 10px 0;
+        /* Reduz o espaçamento */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        border-left: none;
+        /* Remove as bordas em dispositivos muito pequenos */
+        border-right: none;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+        /* Ajusta o tamanho da fonte para telas pequenas */
+    }
+
+    li a {
+        padding: 8px 0;
+        /* Reduz ainda mais o espaçamento dos links */
+    }
+}
+
+img {
+    max-width: 100%;
+    /* A largura máxima da imagem será 100% do contêiner pai */
+    height: auto;
+    /* A altura será ajustada automaticamente, mantendo a proporção */
+    display: block;
+    /* Remove espaçamento em torno da imagem */
+}
